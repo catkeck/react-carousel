@@ -57,7 +57,7 @@
     ]
   },
   "name": "@catkeck/react-carousel",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Carousel component for react",
   "license": "UNLICENSED",
   "files": [
