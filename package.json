@@ -56,7 +56,7 @@
       "yarn lint --fix"
     ]
   },
-  "name": "catkeck-react-carousel",
+  "name": "@catkeck/react-carousel",
   "version": "1.0.0",
   "description": "Updating carousel to work for my project",
   "main": "index.js",
