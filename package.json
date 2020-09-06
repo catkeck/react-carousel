@@ -1,4 +1,11 @@
 {
+  "name": "@catkeck/react-carousel",
+  "version": "1.0.4",
+  "description": "Carousel component for react",
+  "license": "UNLICENSED",
+  "files": [
+    "lib/*"
+  ],
   "private": false,
   "workspaces": [
     "docs-www",
@@ -56,11 +63,5 @@
       "yarn lint --fix"
     ]
   },
-  "name": "@catkeck/react-carousel",
-  "version": "1.0.4",
-  "description": "Carousel component for react",
-  "license": "UNLICENSED",
-  "files": [
-    "lib/*"
-  ]
+  "main": "./lib/index.js"
 }
