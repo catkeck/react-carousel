@@ -1,5 +1,5 @@
 {
-  "private": true,
+  "private": false,
   "workspaces": [
     "docs-www",
     "react-carousel"
@@ -59,8 +59,8 @@
   "name": "@catkeck/react-carousel",
   "version": "1.0.0",
   "description": "Updating carousel to work for my project",
-  "main": "index.js",
+  "main": "react-carousel/src/index.js",
   "repository": "git@github.com:catkeck/react-carousel.git",
   "author": "caitlin.keck <ckeck@acorns.com>",
-  "license": "MIT"
+  "license": "UNLICENSED"
 }
