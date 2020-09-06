@@ -75,5 +75,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/brainhubeu/react-carousel"
-  }
+  },
+  "main": "./lib/index.js"
 }
