@@ -1,6 +1,6 @@
 {
   "name": "@catkeck/react-carousel",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Carousel component for react",
   "engines": {
     "npm": ">=4"
@@ -74,5 +74,5 @@
     "type": "git",
     "url": "https://github.com/brainhubeu/react-carousel"
   },
-  "main": "./react-carousel/src/index.js"
+  "main": "./lib/react-carousel.js"
 }
