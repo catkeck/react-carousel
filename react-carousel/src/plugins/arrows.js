@@ -96,9 +96,8 @@ const arrows = ({ carouselProps, options = {} }) => ({
       () => carouselProps.onChange(carouselProps.value + 1),
       [carouselProps.value, carouselProps.onChange],
     );
-
     const disabled =
-      carouselProps.value >= slides.length - 1 &&
+      carouselProps.value >= slides.length - carouselProps.slidesPerPage &&
       carouselProps?.children?.length === slides.length;
 
     if (options.arrowRight) {
