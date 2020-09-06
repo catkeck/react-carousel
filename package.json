@@ -58,9 +58,9 @@
   },
   "name": "@catkeck/react-carousel",
   "version": "1.0.3",
-  "description": "Updating carousel to work for my project",
-  "main": "react-carousel/src/index.js",
-  "repository": "git@github.com:catkeck/react-carousel.git",
-  "author": "caitlin.keck <ckeck@acorns.com>",
-  "license": "UNLICENSED"
+  "description": "Carousel component for react",
+  "license": "UNLICENSED",
+  "files": [
+    "lib/*"
+  ]
 }
