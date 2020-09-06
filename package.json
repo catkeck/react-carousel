@@ -1,23 +1,21 @@
 {
   "name": "@catkeck/react-carousel",
   "version": "1.0.7",
-  "description": "Carousel component for react",
+  "description": "Carousel component for React",
   "engines": {
-    "npm": ">=4"
+    "npm": ">=6.14.3"
   },
   "files": [
     "lib/*"
   ],
   "scripts": {
-    "preinstall": "node -e \"if (process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('Use yarn for installing: https://yarnpkg.com/en/docs/install')\"",
-    "start-demo": "yarn workspace react-carousel-docs develop",
-    "format": "prettier --write \"./**/*.{js,json}\"",
-    "lint": "eslint docs-www/ react-carousel/ cypress/ --color",
-    "build": "yarn workspace @brainhubeu/react-carousel build",
-    "test:e2e": "start-server-and-test start-demo http://localhost:8000 cypress:run",
-    "test:unit:coverage": "yarn workspace @brainhubeu/react-carousel test:coverage",
-    "test-dockerized:e2e": "docker-compose -f ./docker-compose.e2e.yml up --build --exit-code-from e2e-test",
-    "cypress:run": "yarn cypress run"
+    "lint": "esw webpack.config.* src tools test --color",
+    "clean-dist": "rimraf ./lib && mkdir lib",
+    "prebuild": "npm run clean-dist",
+    "build": "node tools/build.js",
+    "prepack": "cp ../LICENSE.md ../README.md ../docs/CHANGELOG.md .",
+    "test": "jest",
+    "test:coverage": "yarn jest --coverage"
   },
   "author": "Brainhub",
   "license": "MIT",
@@ -66,13 +64,24 @@
     ]
   },
   "peerDependencies": {
-    "react": ">0.14.0 || >15.0.0",
-    "react-dom": ">0.14.0 || >15.0.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "carousel",
+    "react-carousel",
+    "react-component",
+    "component",
+    "image",
+    "image-gallery",
+    "image-slider",
+    "responsive",
+    "gallery",
+    "rwd"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/brainhubeu/react-carousel"
-  },
-  "main": "./lib/react-carousel.js"
+  }
 }
