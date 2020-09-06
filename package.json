@@ -1,6 +1,6 @@
 {
   "name": "@catkeck/react-carousel",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Carousel component for react",
   "engines": {
     "npm": ">=4"
@@ -9,11 +9,15 @@
     "lib/*"
   ],
   "scripts": {
-    "prebuild": "rm -rf ./lib",
-    "build": "babel src --out-dir lib && node-sass src/react-carousel.scss lib/react-carousel.css",
-    "example": "webpack-dev-server --mode development",
-    "test": "jest",
-    "prepublishOnly": "npm run build"
+    "preinstall": "node -e \"if (process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('Use yarn for installing: https://yarnpkg.com/en/docs/install')\"",
+    "start-demo": "yarn workspace react-carousel-docs develop",
+    "format": "prettier --write \"./**/*.{js,json}\"",
+    "lint": "eslint docs-www/ react-carousel/ cypress/ --color",
+    "build": "yarn workspace @brainhubeu/react-carousel build",
+    "test:e2e": "start-server-and-test start-demo http://localhost:8000 cypress:run",
+    "test:unit:coverage": "yarn workspace @brainhubeu/react-carousel test:coverage",
+    "test-dockerized:e2e": "docker-compose -f ./docker-compose.e2e.yml up --build --exit-code-from e2e-test",
+    "cypress:run": "yarn cypress run"
   },
   "author": "Brainhub",
   "license": "MIT",
@@ -45,17 +49,6 @@
     "semantic-release": "^17.1.1",
     "start-server-and-test": "^1.11.0"
   },
-  "scripts": {
-    "preinstall": "node -e \"if (process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('Use yarn for installing: https://yarnpkg.com/en/docs/install')\"",
-    "start-demo": "yarn workspace react-carousel-docs develop",
-    "format": "prettier --write \"./**/*.{js,json}\"",
-    "lint": "eslint docs-www/ react-carousel/ cypress/ --color",
-    "build": "yarn workspace @brainhubeu/react-carousel build",
-    "test:e2e": "start-server-and-test start-demo http://localhost:8000 cypress:run",
-    "test:unit:coverage": "yarn workspace @brainhubeu/react-carousel test:coverage",
-    "test-dockerized:e2e": "docker-compose -f ./docker-compose.e2e.yml up --build --exit-code-from e2e-test",
-    "cypress:run": "yarn cypress run"
-  },
   "publishConfig": {
     "access": "public"
   },
@@ -81,5 +74,5 @@
     "type": "git",
     "url": "https://github.com/brainhubeu/react-carousel"
   },
-  "main": "./lib/index.js"
+  "main": "./react-carousel/src/index.js"
 }
